@@ -1,0 +1,123 @@
+<ng-container *ngIf="cardDetails$ | async as cardDetails">
+  <ng-container >
+    <div class="grid gap-2 grid-cols-2 grid-rows-1">
+      <app-card
+        [color]="'text-violet-700'"
+        [dataFooter]="cardDetails | keyvalue"
+        [totalData]="cardDetails['totalBookings']"
+        [keyPartToShow]="'bookings'"
+        [sizCard]="'w-4/5'"
+      ></app-card>
+      <!-- <app-card
+        [color]="'text-green-800'"
+        [totalData]="cardDetails['totalRevenues']"
+        [sizCard]="'w-4/5'"
+      ></app-card>
+      </div>
+
+      <div class="grid gap-1 grid-cols-3 grid-rows-1">
+      <app-card
+      [color]="'text-violet-700	'"
+      [dataFooter]="[
+        {
+          key: 'EnablWork:',
+          value: cardDetails['totalEnabledWorkshops']
+        },
+        {
+          key: 'DisablWork:',
+          value: cardDetails['totalDisabledWorkshops']
+        },
+        {
+          key: 'PublishWork:',
+          value: cardDetails['totaltotalPublishedWorkshops']
+        }
+
+      ]"
+      [totalData]="cardDetails['totalWorkshops']"
+      [sizCard]="'w-4/5'"
+    ></app-card>
+    <app-card
+    [color]="'text-violet-700	'"
+    [dataFooter]="[
+      {
+        key: 'DisablWorks:',
+        value: cardDetails['totalEnabledApprovedInstructors']
+      },
+      {
+        key: 'PublishdWork:',
+        value: cardDetails['totalDisabledApprovedInstructors']
+      }
+
+    ]"
+    [totalData]="cardDetails['totalInstructors']"
+    [sizCard]="'w-4/5'"
+  >
+</app-card>
+<app-card
+[color]="'text-violet-700	'"
+[totalData]="cardDetails['totalClients']"
+[sizCard]="'w-4/5'"
+>
+</app-card>
+    </div>
+
+    <div class="grid gap-2 grid-cols-2 grid-rows-1">
+      <app-card
+      [color]="'text-violet-700'"
+      [dataFooter]="[
+        {
+          key: 'UpcomingBookings:',
+          value: cardDetails['totalUpcomingBookings']
+        },
+        {
+          key: 'OngoingBookings:',
+          value: cardDetails['totalOngoingBookings']
+        },
+        {
+          key: 'CompletedBookings:',
+          value: cardDetails['totalCompletedBookings']
+        }
+
+      ]"
+      [totalData]="cardDetails['totalEngagementRequests']"
+      [sizCard]="'w-4/2'"
+    ></app-card>
+    <app-card
+    [color]="'text-violet-700'"
+    [dataFooter]="[
+      {
+        key: 'UpcomingBookings:',
+        value: cardDetails['totalUpcomingBookings']
+      },
+      {
+        key: 'OngoingBookings:',
+        value: cardDetails['totalOngoingBookings']
+      },
+      {
+        key: 'CompletedBookings:',
+        value: cardDetails['totalCompletedBookings']
+      }
+    ]"
+    [totalData]="cardDetails['totalSuggestionRequests']"
+    [sizCard]="'max-w-md'"
+  ></app-card>
+    </div>
+    <div class="grid gap-2 grid-cols-2 grid-rows-1">
+    <app-card
+    [color]="'text-violet-700'"
+    [arrayDataWorkshops]="cardDetails['topRatedInstructors']"
+    [sizCard]="'max-w-md'"
+  >
+</app-card>
+
+<app-card
+[color]="'text-violet-700'"
+[arrayDataWorkshops]="cardDetails['topRevenueWorkshops']"
+[sizCard]="'max-w-md'"
+>
+</app-card>
+
+    </div> -->
+</div>
+  </ng-container>
+</ng-container>

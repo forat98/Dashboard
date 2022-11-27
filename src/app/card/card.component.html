@@ -1,0 +1,36 @@
+
+
+<ng-container >
+  <mat-card class="m-2 h-4/5 min-h-min	min-w-min" [ngClass]="sizCard">
+          <mat-card-header>
+          </mat-card-header>
+
+     <ng-container *ngIf="totalData">
+      <mat-card-content>
+      <p [ngClass]="color" class="text-center font-bold	text-2xl">{{totalData}}</p>
+      </mat-card-content>
+
+   <ng-container *ngFor="let item of dataFooter">
+    <ng-container *ngIf="item.key.toLowerCase().includes(keyPartToShow)">
+      <span class="m-2 text-slate-400 text-xs">{{item.key}}</span>
+    <span class="text-cyan-500	 text-base">{{item.value}}</span>
+    </ng-container>
+
+   </ng-container>
+     </ng-container>
+
+
+     <ng-container *ngIf="arrayDataWorkshops">
+    <ng-container *ngFor="let item of arrayDataWorkshops">
+    <p *ngIf="item.workshopName"> {{item.workshopName}}</p>
+    <p *ngIf="item.firstName || item.lastName" class="flex items-center	"><img [src]="item.imageUrl" class="w-10 h-10 rounded-full mx-2
+
+      " alt=""> <span>{{item.firstName}} {{item.lastName}}</span></p>
+
+</ng-container>
+     </ng-container>
+
+
+  </mat-card>
+</ng-container>
+
