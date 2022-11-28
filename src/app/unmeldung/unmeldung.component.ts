@@ -12,7 +12,6 @@ import { StatisticDTO } from '../statistic-class';
 })
 export class UnmeldungComponent implements OnInit {
   cardDetails$!: Observable<any>;
-  Object=Object;
   constructor(private _dataServec: MyDatatService) {
 
   }

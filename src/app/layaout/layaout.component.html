@@ -1,36 +1,43 @@
-<mat-sidenav-container fullscreen class="bg-inherit flex items-center justify-start">
-
+<mat-sidenav-container
+  fullscreen
+  class="bg-inherit flex items-center justify-start"
+>
   <mat-sidenav
     #sidenav
     class="w-26 z-99999 m-3"
     mode="side"
-    class="text-3xl font-bold text-neutral-50 bg-[#11182e] print:hidden ps--active-y"
+    class="text-3xl font-bold text-neutral-50 bg-[#11182e] "
     opened="true"
+    [position]="lang =='ar'?'end':'start'"
   >
-
-  <div class="flex items-center w-full p-4 pl-6 ng-tns-c194-0">
-    <div class="flex items-center justify-center">
-      <img src="../assets/images/logo.svg" class="w-20">
+    <div class="flex items-center w-full p-4 pl-6 ng-tns-c194-0">
+      <div class="flex items-center justify-center">
+        <img src="../assets/images/logo.svg" class="w-20" />
+      </div>
     </div>
-</div>
 
-<img  class="rounded w-20" src="../assets/images/person.png" alt="">
+    <img class="rounded w-20" src="../assets/images/person.png" alt="" />
     <div class="logomain">tantetobi</div>
-<div class="partial-vertical-navigation-item-wrapper divider"></div>
-<mat-nav-list>
-    <span class="full-width" class="text-purple-500 text-base px-3			">UNMELDUNG</span>
-    <a mat-menu-item routerLink="/Dashboard">DashBoard</a>
-    <a mat-menu-item class="menu-button  text-white	px-px		" >Katgorien</a>
-    <a mat-menu-item class="menu-button  text-white	px-px		" >Themen</a>
-    <span class="full-width" class="text-purple-500 text-base px-3			">USERS</span>
-    <a mat-menu-item >Admin</a>
-    <a mat-menu-item class="menu-button  text-white	px-px		" >Schulungsleiter/-Innen</a>
-    <a mat-menu-item class="menu-button  text-white	px-px		" >Kunden</a>
-
-</mat-nav-list>
+    <div class="partial-vertical-navigation-item-wrapper divider"></div>
+    <mat-nav-list>
+      <span class="full-width" class="text-purple-500 text-base px-3"
+        >UNMELDUNG</span
+      >
+      <a mat-menu-item routerLink="/Dashboard">DashBoard</a>
+      <a mat-menu-item class="menu-button text-white px-px">Katgorien</a>
+      <a mat-menu-item class="menu-button text-white px-px">Themen</a>
+      <span class="full-width" class="text-purple-500 text-base px-3"
+        >USERS</span
+      >
+      <a mat-menu-item>Admin</a>
+      <a mat-menu-item class="menu-button text-white px-px"
+        >Schulungsleiter/-Innen</a
+      >
+      <a mat-menu-item class="menu-button text-white px-px">Kunden</a>
+    </mat-nav-list>
   </mat-sidenav>
-
-  <div class="example-sidenav-content">
+  <div
+  >
     <div
       class="sticky top-0 flex flex-0 items-center w-full h-16 px-4 md:px-6 shadow dark:shadow-none dark:border-b bg-card dark:bg-transparent print:hidden z-[15]"
     >
@@ -39,9 +46,9 @@
         class="mat-focus-indicator mat-icon-button mat-button-base"
       >
         <span class="mat-button-wrapper">
-           <mat-icon (click)="sidenav.toggle()" class="sidenav-menu">menu</mat-icon>
-
-          </span
+          <mat-icon (click)="sidenav.toggle()" class="sidenav-menu"
+            >menu</mat-icon
+          > </span
         ><span
           matripple=""
           class="mat-ripple mat-button-ripple mat-button-ripple-round"
@@ -54,7 +61,8 @@
           <button
             aria-haspopup="true"
             mat-icon-button=""
-            class="mat-focus-indicator mat-menu-trigger mat-icon-button mat-button-base">
+            class="mat-focus-indicator mat-menu-trigger mat-icon-button mat-button-base"
+          >
             <span class="mat-button-wrapper"
               ><span
                 class="relative w-6 shadow rounded-sm overflow-hidden ng-star-inserted"
@@ -64,17 +72,14 @@
                 ><img
                   class="w-full"
                   src="assets/images/flags/DE.svg"
-                  alt="Flag image for de" /></span
-              ></span
+                  alt="Flag image for de" /></span></span
             ><span
               matripple=""
               class="mat-ripple mat-button-ripple mat-button-ripple-round"
             ></span
             ><span class="mat-button-focus-overlay"></span></button
-          ><mat-menu class="ng-tns-c52-2 ng-star-inserted"
-            ></mat-menu
-          ></widget-language-selector
-        >
+          ><mat-menu class="ng-tns-c52-2 ng-star-inserted"></mat-menu
+        ></widget-language-selector>
         <button
           mat-icon-button=""
           fullscreen="document"
@@ -82,8 +87,7 @@
           aria-describedby="cdk-describedby-message-1"
           cdk-describedby-host="0"
         >
-          <span class="mat-button-wrapper"
-            >
+          <span class="mat-button-wrapper">
             <mat-icon
               role="img"
               class="mat-icon notranslate material-icons mat-icon-no-color"
@@ -94,13 +98,13 @@
           >
           <span
             matripple=""
-            class="mat-ripple mat-button-ripple mat-button-ripple-round"></span
-          ><span class="mat-button-focus-overlay"></span></button>
+            class="mat-ripple mat-button-ripple mat-button-ripple-round"
+          ></span
+          ><span class="mat-button-focus-overlay"></span>
+        </button>
       </div>
-
     </div>
     <router-outlet></router-outlet>
-
   </div>
 
 </mat-sidenav-container>

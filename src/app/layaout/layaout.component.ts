@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LangDefinition, TranslocoService} from '@ngneat/transloco';
 
 @Component({
   selector: 'app-layaout',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./layaout.component.css']
 })
 export class LayaoutComponent implements OnInit {
+  lang!:string;
+constructor(  private _translocoService: TranslocoService,) {
+  _translocoService.langChanges$.subscribe(lang =>
+    this.lang=lang
+)
+}
 
-  constructor() { }
+
+
 
   ngOnInit() {
   }
+
+
 
 }

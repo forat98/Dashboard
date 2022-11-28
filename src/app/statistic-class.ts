@@ -1,6 +1,8 @@
 
 
 export interface DataStatistic{
+    [x: string]: any;
+    data: DataStatistic;
     totalBookings: number,
     totalUpcomingBookings: number,
     totalOngoingBookings: number,
@@ -40,9 +42,9 @@ export interface topRatedInstructors{
   profession: string}
 
 export class StatisticDTO  {
-  totalUpcomingBookings: any;
-  totalCompletedBookings: any;
-  totalOngoingBookings:any;
+  totalUpcomingBookings: number;
+  totalCompletedBookings: number;
+  totalOngoingBookings:number;
    totalBookings: number;
   totalRevenues: number;
    totalReceivables: number;
@@ -91,19 +93,28 @@ export class StatisticDTO  {
 
    result(){
     return {
-     booking: [{ totalUpcomingBookings: this.totalUpcomingBookings,
-              totalOngoingBookings:this.totalOngoingBookings,
-              totalCompletedBookings:this.totalCompletedBookings
-            }],
-    Workshops: [{
+    booking:
+{
+  booking:this.totalBookings,
+  bookingData:[
+    { totalUpcomingBookings: this.totalUpcomingBookings,
+     totalOngoingBookings:this.totalOngoingBookings,
+     totalCompletedBookings:this.totalCompletedBookings
+    }],
+},
+  Workshops:{
+    Workshops:this.totalWorkshops,
+    WorkshopsData:[
+      {
 
                 totalDisabledWorkshops: this.totalDisabledWorkshops,
                 totalEnabledWorkshops: this.totalEnabledWorkshops,
                 totalPublishedWorkshops: this.totalPublishedWorkshops
-              }]
-    }
+              }
+            ]
   }
 
+
+
 }
-
-
+}}

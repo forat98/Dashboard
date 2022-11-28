@@ -1,21 +1,33 @@
 <ng-container *ngIf="cardDetails$ | async as cardDetails">
   <ng-container >
-    <div class="grid gap-2 grid-cols-2 grid-rows-1">
+    <div class="grid gap-1  grid-cols-2 max-[700px]:grid-cols-1 grid-rows-1">
       <app-card
         [color]="'text-violet-700'"
-        [dataFooter]="cardDetails | keyvalue"
+        [dataFooter]="[
+        {
+          key: 'UpcomingBookings:',
+          value: cardDetails['totalUpcomingBookings']
+        },
+        {
+          key: 'OngoingBookings:',
+          value: cardDetails['totalOngoingBookings']
+        },
+        {
+          key: 'CompletedBookings:',
+          value: cardDetails['totalCompletedBookings']
+        }
+      ]"
         [totalData]="cardDetails['totalBookings']"
-        [keyPartToShow]="'bookings'"
-        [sizCard]="'w-4/5'"
+        [sizCard]="'w-4/2 max-[700px]:w-3/2'"
       ></app-card>
-      <!-- <app-card
+       <app-card
         [color]="'text-green-800'"
-        [totalData]="cardDetails['totalRevenues']"
-        [sizCard]="'w-4/5'"
+        [totalData]="(cardDetails['totalRevenues']| number: '1.0-0')"
+        [sizCard]="'w-4/2 max-[700px]:w-3/2'"
       ></app-card>
       </div>
 
-      <div class="grid gap-1 grid-cols-3 grid-rows-1">
+      <div class="grid gap-1 grid-cols-3 max-[700px]:grid-cols-1 grid-rows-1">
       <app-card
       [color]="'text-violet-700	'"
       [dataFooter]="[
@@ -33,8 +45,8 @@
         }
 
       ]"
-      [totalData]="cardDetails['totalWorkshops']"
-      [sizCard]="'w-4/5'"
+      [totalData]="cardDetails['totalWorkshops']| number: '1.0-0'"
+      [sizCard]="'w-3/2'"
     ></app-card>
     <app-card
     [color]="'text-violet-700	'"
@@ -50,33 +62,29 @@
 
     ]"
     [totalData]="cardDetails['totalInstructors']"
-    [sizCard]="'w-4/5'"
+    [sizCard]="'w-3/2'"
   >
 </app-card>
 <app-card
 [color]="'text-violet-700	'"
 [totalData]="cardDetails['totalClients']"
-[sizCard]="'w-4/5'"
+[sizCard]="'w-3/2'"
 >
 </app-card>
     </div>
 
-    <div class="grid gap-2 grid-cols-2 grid-rows-1">
+    <div class="grid gap-2 grid-cols-2 max-[700px]:grid-cols-1 grid-rows-1">
       <app-card
       [color]="'text-violet-700'"
       [dataFooter]="[
         {
-          key: 'UpcomingBookings:',
-          value: cardDetails['totalUpcomingBookings']
+          key: 'totalApprovedEngagementRequests:',
+          value: cardDetails['totalApprovedEngagementRequests']
         },
         {
-          key: 'OngoingBookings:',
-          value: cardDetails['totalOngoingBookings']
+          key: 'totalPendingEngagementRequests:',
+          value: cardDetails['totalPendingEngagementRequests']
         },
-        {
-          key: 'CompletedBookings:',
-          value: cardDetails['totalCompletedBookings']
-        }
 
       ]"
       [totalData]="cardDetails['totalEngagementRequests']"
@@ -84,40 +92,24 @@
     ></app-card>
     <app-card
     [color]="'text-violet-700'"
-    [dataFooter]="[
-      {
-        key: 'UpcomingBookings:',
-        value: cardDetails['totalUpcomingBookings']
-      },
-      {
-        key: 'OngoingBookings:',
-        value: cardDetails['totalOngoingBookings']
-      },
-      {
-        key: 'CompletedBookings:',
-        value: cardDetails['totalCompletedBookings']
-      }
-    ]"
     [totalData]="cardDetails['totalSuggestionRequests']"
-    [sizCard]="'max-w-md'"
+    [sizCard]="'w-4/2'"
   ></app-card>
     </div>
-    <div class="grid gap-2 grid-cols-2 grid-rows-1">
+    <div class="grid gap-2 grid-cols-2 max-[700px]:grid-cols-1 grid-rows-1">
     <app-card
     [color]="'text-violet-700'"
     [arrayDataWorkshops]="cardDetails['topRatedInstructors']"
-    [sizCard]="'max-w-md'"
+    [sizCard]="'w-4/2'"
   >
 </app-card>
 
 <app-card
 [color]="'text-violet-700'"
 [arrayDataWorkshops]="cardDetails['topRevenueWorkshops']"
-[sizCard]="'max-w-md'"
+[sizCard]="'w-4/2'"
 >
 </app-card>
-
-    </div> -->
-</div>
+    </div>
   </ng-container>
 </ng-container>

@@ -1,7 +1,4 @@
-import {CommonModule} from '@angular/common';
 import {ChangeDetectionStrategy, Component, NgModule, Renderer2} from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-import {MatMenuModule} from '@angular/material/menu';
 import {LangDefinition, TranslocoService} from '@ngneat/transloco';
 import {share} from 'rxjs/operators';
 

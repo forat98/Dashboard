@@ -5,7 +5,7 @@ enum Sizes {
   Large = 'lg',
 }
 interface TotalData{
-  dataBody: number;
+  dataBody: number  ;
 }
 
 interface ArrayWorkshops{
@@ -30,12 +30,11 @@ interface DataFooter {
 })
 export class CardComponent implements OnInit {
 
-  @Input() totalData!:TotalData;
+  @Input() totalData!:TotalData|string|null;
   @Input() arrayDataWorkshops!:ArrayWorkshops[]
   @Input() dataFooter!:DataFooter[]
   @Input() color!:string;
   @Input() sizCard!:string;
-  @Input() keyPartToShow:string=''
 
 
   constructor() {
