@@ -17,15 +17,16 @@ import { LayaoutComponent } from './layaout/layaout.component';
 import {MatCardModule} from '@angular/material/card';
 import { UnmeldungComponent } from './unmeldung/unmeldung.component';
 import { CardComponent } from './card/card.component';
+import { FullScreenComponent } from './full-screen/full-screen.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     LanguageSelectorComponent,
     LayaoutComponent,
     UnmeldungComponent,
-      CardComponent
-
+      CardComponent,
+      FullScreenComponent
    ],
   imports: [
     BrowserModule,
